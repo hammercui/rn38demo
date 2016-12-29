@@ -1,0 +1,44 @@
+{
+  "name": "rn038demo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "axios": "^0.15.3",
+    "flux-standard-action": "^1.0.0",
+    "lodash": "^4.17.3",
+    "react": "~15.4.1",
+    "react-native": "0.38.0",
+    "react-native-router-flux": "^3.37.0",
+    "react-native-vector-icons": "^3.0.0",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-actions": "^1.2.0",
+    "redux-logger": "^2.7.4",
+    "redux-promise": "^0.5.3",
+    "redux-router": "^2.1.2",
+    "redux-watch": "^1.1.1",
+    "reselect": "^2.5.4"
+  },
+  "src": "/",
+  "devDependencies": {
+    "babel-jest": "17.0.2",
+    "babel-preset-react-native": "1.9.0",
+    "jest": "17.0.3",
+    "jest-react-native": "17.0.3",
+    "react-test-renderer": "~15.4.0-rc.4",
+    "whatwg-fetch": "2.0.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+
+  "rnpm":{
+    "assets":[
+      ""
+    ]
+  }
+}
