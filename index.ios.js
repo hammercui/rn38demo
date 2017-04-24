@@ -14,4 +14,4 @@ import {
 
 import Root from "./app/root";
 
-AppRegistry.registerComponent('rn038demo', () => Root);
+AppRegistry.registerComponent('rnFavoriteApp', () => Root);

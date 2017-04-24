@@ -46,7 +46,7 @@ export default (
                   <Scene key="tab-home"       component={Home} title="首页" initial={true} hideNavBar={true} icon={TabBarIcon} />
                   <Scene key="tab-fuli"       component={Fuli} title="福利"  hideNavBar={true}  icon={TabBarIcon}/>
                   <Scene key="tab-study"      component={Study} title="学习"  hideNavBar={true}  icon={TabBarIcon}/>
-                  <Scene key="tab-userCenter" component={UserCenter} title="用户宗新"  hideNavBar={true}  icon={TabBarIcon}/>
+                  <Scene key="tab-userCenter" component={UserCenter} title="用户设置"  hideNavBar={true}  icon={TabBarIcon}/>
               </Scene>
 
           </Scene>

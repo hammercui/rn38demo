@@ -7,7 +7,7 @@
 import  React,{Component,propTypes} from "react"
 import {View,Text} from "react-native";
 
-import Icons from "../../core/customIcons";
+import Icons from "./../customIcons";
 import styles from "./styles";
 
 class  TabBarIcon extends  Component{

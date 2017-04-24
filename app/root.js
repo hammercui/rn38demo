@@ -11,7 +11,6 @@ import Router from "./router";
 // const store = configureStore();
 
 import store from "../biz/store/index";
-
 if (!__DEV__) {
     console.info = () => {};
     console.log = () => {};

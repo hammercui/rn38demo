@@ -14,6 +14,7 @@ const headers = {
 //豆瓣url
 const doubanUrl = "https://api.douban.com/v2/";
 
+//noinspection JSAnnotator
 export default request = (authorization = false)=>{
     //accesstoken
     const {access_token} = global;
