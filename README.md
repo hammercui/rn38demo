@@ -39,6 +39,8 @@ $ react-native-git-upgrade X.Y.Z
 
 ```
 4.运行`react-native -version`来查看是不是最新版本
+#### 测试可回收组件`FlatList`
+![演示](image/flatlist.gif)
 
 ### 2017/01/05
 

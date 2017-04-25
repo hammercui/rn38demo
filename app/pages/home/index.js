@@ -12,7 +12,7 @@ import {
 import selector from "./selector";
 import actions from "./actions";
 import {connect} from "react-redux";
-import {Button} from "../../vendor/native-base";
+import {Button} from "native-base";
 import Modal from "react-native-animated-modal";
 import styles from "./styles";
 //redux store
