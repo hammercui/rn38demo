@@ -35,7 +35,12 @@ export let getTop250List = ()=>{
     return request().get(
         "movie/top250"
     )
-}
+};
+
+
+
+
+
 
 //  口碑榜/v2/movie/weekly
 

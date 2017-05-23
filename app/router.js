@@ -8,7 +8,6 @@ import React,{Component} from "react";
 import {Scene,Router,Modal,Reducer} from "react-native-router-flux";
 import ReactNative,{Alert, BackAndroid} from "react-native";
 
-
 import Home from "./pages/home/index";
 import Fuli from "./pages/fuli/index";
 import Study from "./pages/study/index";

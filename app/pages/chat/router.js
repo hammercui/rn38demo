@@ -9,49 +9,66 @@ import {
 } from 'react-native';
 
 import { StackNavigator,TabNavigator,DrawerNavigator } from 'react-navigation';
-import ChatScene from "./Scene/ChatScene"
-import HomeScene from "./Scene/InfoScene";
-import {RecentChatsScreen,AllContactsScreen} from "./Scene/TabHomeScene";
-import DrawerScene from "./Scene/DrawerScene";
-import {tabBarIcon} from "./GenerateFactory"
+//import {StackNavigator,TabNavigator,DrawerNavigator} from "../../vendor/react-navigation";
 import Icon from 'react-native-vector-icons/Ionicons';
+import {tabNavigationOptions,tabNavigatorConfig,modalStackNavigationOptions,stackNavigationOptions} from "./RouterFactory"
 
-
-
-
+//引入Screen
+import ChatScene from "./screen/ChatScene"
+import HomeScene from "./screen/InfoScene";
+//import {RecentChatsScreen,AllContactsScreen} from "./screen/TabHomeScene";
+import DrawerScene from "./screen/DrawerScene";
+import HomeScreen from "./screen/home";
+import MyselfScreen from "./screen/myself";
+import CategoryScreen from "./screen/category";
+import MessageScreen from "./screen/message";
+import LoginScreen from "./screen/login";
+import RegisterScreen from "./screen/login/RegisterScreen";
 //tabBar导航
 const  MainScreenNavigator = TabNavigator(
   //路由
   {
-    RecentChatsScreen: {
-      name:"tabbar导航-首页",
-      screen: RecentChatsScreen ,
-      navigationOptions:({navigation})=>
-        (
-          { title: "首页",
-            tabBarIcon: tabBarIcon({name: "ios-person", size: 30})
-          }
-        )
+    HomeScreen: {
+      name:"tabBar导航-首页",
+      screen: HomeScreen ,
+      //navigationOptions:props=>tabBarOptions(props,{title: "首页", tabBarIcon:{name: "ios-home", size: 30}})
     },
-    AllContactsScreen: {
+    CategoryScreen:{
+      name:"tabBar导航-分类",
+      screen: CategoryScreen ,
+      navigationOptions:props=>tabNavigationOptions(props,{title: "分类", tabBarIcon:{name: "ios-trophy", size: 30}})
+      // navigationOptions:({navigation})=>
+      //   (
+      //     { title: "分类",
+      //       tabBarIcon: tabBarIcon({name: "ios-trophy", size: 30})
+      //     }
+      //   )
+    },
+    MessageScreen:{
+      name:"tabBar导航-消息",
+      screen: MessageScreen ,
+      navigationOptions:props=>tabNavigationOptions(props,{title: "消息", tabBarIcon:{name: "ios-albums", size: 30}})
+      // navigationOptions:({navigation})=>
+      //   (
+      //     { title: "消息",
+      //       tabBarIcon: tabBarIcon({name: "ios-albums", size: 30})
+      //     }
+      //   )
+    },
+    MyselfScreen: {
       name:"tabbar导航-我的",
-      screen: AllContactsScreen ,
-      navigationOptions:({navigation})=>
-        (
-          { title:"我的",
-            tabBarIcon: tabBarIcon({name: "ios-person", size: 30})
-          }
-        )
+      screen: MyselfScreen ,
+      navigationOptions:props=>tabNavigationOptions(props,{title: "我的", tabBarIcon:{name: "ios-person", size: 30}})
+      // navigationOptions:({navigation})=>
+      //   (
+      //     { title:"我的",
+      //       tabBarIcon: tabBarIcon({name: "ios-person", size: 30})
+      //     }
+      //   )
     },
-
   },
-  //TabNavigatorConfig
-  {
-    tabBarOptions:{activeTintColor: '#e91e63',showIcon:true},
-    tabBarPosition:"bottom", //top bottom
-    pressColor:"#4f4f4f",
-    pressOpacity:50,
-  }
+
+  tabNavigatorConfig()
 );
 
 
@@ -59,22 +76,46 @@ const  MainScreenNavigator = TabNavigator(
 const StackNavRoot = StackNavigator(
   //路由
   {
-    HomeTapBar: {
+    MainScreen: {
       name:"堆栈导航-首页",
       screen: MainScreenNavigator,
-      navigationOptions: ({navigation}) => ({
-       // title: "首页",
-        headerLeft:<Button title="Menu" onPress={()=>navigation.navigate("DrawerOpen")}/>
-      }),
     },
-
-    Chat: { screen: ChatScene,path:"chat/:user"},
-    Info: { screen: HomeScene,path:"info"}
+    ChatScreen: {
+      screen: ChatScene,
+      path:"chat/:user",
+      navigationOptions:props=>stackNavigationOptions(props),
+    },
+    InfoScreen: {
+      screen: HomeScene,
+      path:"info",
+      navigationOptions:props=>stackNavigationOptions(props),
+    },
   },
   //StackNavigatorConfig
   {mode:"card",}
 );
 
+// 模态页堆栈导航
+const ModalNavigator = StackNavigator(
+  //路由
+  {
+    StackNavRoot:{
+      screen:StackNavRoot,
+      navigationOptions: ({navigation}) => ({header:null}),
+    },
+    LoginScreen:{
+      screen:LoginScreen,
+      navigationOptions:props=>modalStackNavigationOptions(props),
+    },
+    RegisterScreen:{
+      name:"注册页",
+      screen:RegisterScreen,
+      navigationOptions:props=>stackNavigationOptions(props),
+    },
+  },
+  //StackNavigatorConfig
+  {mode:"modal"}
+);
 
 //抽屉导航
 const DrawerRoot = DrawerNavigator(
@@ -91,4 +132,4 @@ const DrawerRoot = DrawerNavigator(
 );
 
 
-export default StackNavRoot;
+export default ModalNavigator;

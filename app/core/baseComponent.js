@@ -3,10 +3,10 @@
  */
 'use strict';
 import React, {Component,PureComponent} from 'react';
-//import { getTheme } from '../theme';
+import { getTheme } from '../theme';
 
 export default class BaseComponent extends PureComponent {
-/**
+
     static contextTypes = {
         theme: React.PropTypes.object
     };
@@ -31,25 +31,10 @@ export default class BaseComponent extends PureComponent {
         // return this.context.theme ? this.context.theme:getTheme();
         // return getTheme();
     }
- **/
 
-  constructor(props){
-      super(props);
-      const { navigate } = this.props.navigation;
-      this.navigate = navigate;
-  }
-
-  /**
-   * 获得导航
-   */
-  // getNavigate(){
-  //   const { navigate } = this.props.navigation;
-  //   console.log("base",navigate);
-  //   return navigate;
-  // }
 
   static navigationOptions = ({navigation})=>({
-    title: navigation.state.params && navigation.state.params.title + "345345" | "title"
+    title: (navigation.state.params && navigation.state.params.title + "345345") || "title"
     //headerRight:<Button title="Info"  onPress={() => navigation.navigate('Info', { user: 'hammer2' })} />
   });
 
