@@ -11,19 +11,19 @@ import {
 import { StackNavigator,TabNavigator,DrawerNavigator } from 'react-navigation';
 //import {StackNavigator,TabNavigator,DrawerNavigator} from "../../vendor/react-navigation";
 import Icon from 'react-native-vector-icons/Ionicons';
-import {tabNavigationOptions,tabNavigatorConfig,modalStackNavigationOptions,stackNavigationOptions} from "./RouterFactory"
+import {tabNavigationOptions,tabNavigatorConfig,modalStackNavigationOptions,stackNavigationOptions} from "./routerConfig"
 
 //引入Screen
-import ChatScene from "./screen/ChatScene"
-import HomeScene from "./screen/InfoScene";
+import ChatScene from "../pages/chat/screen/ChatScene"
+import HomeScene from "../pages/chat/screen/InfoScene";
 //import {RecentChatsScreen,AllContactsScreen} from "./screen/TabHomeScene";
-import DrawerScene from "./screen/DrawerScene";
-import HomeScreen from "./screen/home";
-import MyselfScreen from "./screen/myself";
-import CategoryScreen from "./screen/category";
-import MessageScreen from "./screen/message";
-import LoginScreen from "./screen/login";
-import RegisterScreen from "./screen/login/RegisterScreen";
+import DrawerScene from "../pages/chat/screen/DrawerScene";
+import HomeScreen from "../pages/chat/screen/home/index";
+import MyselfScreen from "../pages/chat/screen/myself/index";
+import CategoryScreen from "../pages/chat/screen/category/index";
+import MessageScreen from "../pages/chat/screen/message/index";
+import LoginScreen from "../pages/chat/screen/login/index";
+import RegisterScreen from "../pages/chat/screen/login/RegisterScreen";
 //tabBar导航
 const  MainScreenNavigator = TabNavigator(
   //路由
@@ -31,44 +31,25 @@ const  MainScreenNavigator = TabNavigator(
     HomeScreen: {
       name:"tabBar导航-首页",
       screen: HomeScreen ,
-      //navigationOptions:props=>tabBarOptions(props,{title: "首页", tabBarIcon:{name: "ios-home", size: 30}})
     },
     CategoryScreen:{
       name:"tabBar导航-分类",
       screen: CategoryScreen ,
       navigationOptions:props=>tabNavigationOptions(props,{title: "分类", tabBarIcon:{name: "ios-trophy", size: 30}})
-      // navigationOptions:({navigation})=>
-      //   (
-      //     { title: "分类",
-      //       tabBarIcon: tabBarIcon({name: "ios-trophy", size: 30})
-      //     }
-      //   )
     },
     MessageScreen:{
       name:"tabBar导航-消息",
       screen: MessageScreen ,
       navigationOptions:props=>tabNavigationOptions(props,{title: "消息", tabBarIcon:{name: "ios-albums", size: 30}})
-      // navigationOptions:({navigation})=>
-      //   (
-      //     { title: "消息",
-      //       tabBarIcon: tabBarIcon({name: "ios-albums", size: 30})
-      //     }
-      //   )
     },
     MyselfScreen: {
       name:"tabbar导航-我的",
       screen: MyselfScreen ,
       navigationOptions:props=>tabNavigationOptions(props,{title: "我的", tabBarIcon:{name: "ios-person", size: 30}})
-      // navigationOptions:({navigation})=>
-      //   (
-      //     { title:"我的",
-      //       tabBarIcon: tabBarIcon({name: "ios-person", size: 30})
-      //     }
-      //   )
     },
   },
 
-  tabNavigatorConfig()
+  tabNavigatorConfig({initialRouteName:"HomeScreen"})
 );
 
 

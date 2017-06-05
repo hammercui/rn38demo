@@ -11,10 +11,10 @@ import {
 import {Badge} from "../../../../widgets";
 
 
-import BaseComponent from "../../../../core/baseComponent";
+import BaseComponent from "../../../../reduxVersion/baseComponent";
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import {tabBarIcon} from "../../RouterFactory";
+import {tabBarIcon} from "../../../../core/routerConfig";
 
 export default class CategoryScreen extends PureComponent{
 

@@ -5,7 +5,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Button,TouchableOpacity,Dimensions,Platform} from "react-native";
-import BaseStyleSheet from"../../core/baseStyleSheet";
+import BaseStyleSheet from"../reduxVersion/baseStyleSheet";
 const tabBarWidth = Dimensions.get('window').width * 0.25;
 //默认tabBar的路由属性
 const defaultTabNavigatorConfig = {

@@ -3,7 +3,7 @@
  */
 import React, { Component, PropTypes } from 'react'
 import {View,Image, Platform} from 'react-native';
-import BaseComponent from "../core/baseComponent";
+import BaseComponent from "../reduxVersion/baseComponent";
 import _ from 'lodash';
 import {Button, Icon, Text} from './index';
 import enhanceProps from '../utils/enhanceProps';

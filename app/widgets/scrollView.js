@@ -7,7 +7,7 @@ import React,{PropTypes} from "react";
 import {Platform ,ScrollView,RefreshControl,ActivityIndicator,TouchableOpacity} from "react-native";
 import {View} from "./index";
 import Text from "./text";
-import BaseComponent from "../core/baseComponent";
+import BaseComponent from "../reduxVersion/baseComponent";
 import enhanceProps from "../utils/enhanceProps";
 import {TopButton} from "./refreshListView";
 import _ from 'lodash';

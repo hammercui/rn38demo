@@ -5,7 +5,7 @@
 
 import React, {PropTypes} from 'react';
 import ReactNative, {Platform, View} from 'react-native';
-import BaseComponent from '../core/baseComponent';
+import BaseComponent from '../reduxVersion/baseComponent';
 import enhanceProps from '../utils/enhanceProps';
 import _ from 'lodash';
 import {Button, Icon, Text} from './index';

@@ -4,7 +4,7 @@
 import React, {PropTypes, Component} from 'react';
 import ReactNative, {View, InteractionManager} from 'react-native';
 import enhanceProps from '../utils/enhanceProps';
-import BaseComponent from './baseComponent';
+import BaseComponent from '../reduxVersion/baseComponent';
 import {Actions, ActionConst} from 'react-native-router-flux';
 
 import Spinner from 'react-native-spinkit';

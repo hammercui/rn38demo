@@ -5,7 +5,7 @@
 
 import React, {PropTypes} from 'react';
 import {View, TextInput, Platform, Text} from 'react-native';
-import BaseComponent from '../core/baseComponent';
+import BaseComponent from '../reduxVersion/baseComponent';
 import enhanceProps from '../utils/enhanceProps';
 
 

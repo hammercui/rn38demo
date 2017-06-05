@@ -3,7 +3,7 @@
  */
 'use strict';
 import React, {Component,PureComponent} from 'react';
-import { getTheme } from '../theme';
+import { getTheme } from './theme/index';
 
 export default class BaseComponent extends PureComponent {
 

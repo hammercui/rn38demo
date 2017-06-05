@@ -1,7 +1,7 @@
 /**
  * Created by Gaohan on 16/12/23.
  */
-import defaultTheme from './default';
+import defaultTheme from '../../core/theme';
 
 function setTheme(aTheme={}) {
   Object.assign(defaultTheme, aTheme);

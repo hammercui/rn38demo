@@ -14,7 +14,7 @@ import {Badge} from "../../../../widgets";
 
 import { NavigationActions } from 'react-navigation'
 
-import BaseComponent from "../../../../core/baseComponent";
+import BaseComponent from "../../../../reduxVersion/baseComponent";
 
 import Icon from 'react-native-vector-icons/Ionicons';
 

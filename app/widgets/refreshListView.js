@@ -8,13 +8,13 @@ import {Platform, ListView, RefreshControl,
     RecyclerViewBackedScrollView,ActivityIndicator,
     TouchableWithoutFeedback,TouchableOpacity, PixelRatio
 } from 'react-native';
-import BaseComponent from "../core/baseComponent";
+import BaseComponent from "../reduxVersion/baseComponent";
 import enhanceProps from "../utils/enhanceProps";
 import View from "./view";
 import Text from "./text";
 import {Button, Icon} from "./index";
 import _ from 'lodash';
-import BaseStyleSheet from '../core/baseStyleSheet';
+import BaseStyleSheet from '../reduxVersion/baseStyleSheet';
 
 //滚动条移动多少显示置顶按钮
 const SHOW_TOP_BTN_TOP = 200;

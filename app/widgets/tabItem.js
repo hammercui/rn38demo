@@ -5,7 +5,7 @@
 
 import React, {PropTypes} from 'react';
 import {View, Platform} from 'react-native';
-import BaseComponent from '../core/baseComponent';
+import BaseComponent from '../reduxVersion/baseComponent';
 import Icon from './icon';
 import Text from './text';
 import enhanceProps from '../utils/enhanceProps';

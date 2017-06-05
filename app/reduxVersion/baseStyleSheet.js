@@ -2,7 +2,7 @@
  * Created by Gaohan on 16/12/23.
  */
 import {StyleSheet} from 'react-native';
-import { getTheme, setTheme } from '../theme';
+import { getTheme, setTheme } from './theme/index';
 // import testTheme from '../theme/testTheme';
 
 // setTheme(testTheme);

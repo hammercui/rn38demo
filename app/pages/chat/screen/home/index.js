@@ -13,28 +13,17 @@ import {
 import {Badge,ScrollView} from"../../../../widgets";
 import styles from "./styles";
 
-import BaseComponent from "../../../../core/baseComponent";
+import BaseComponent from "../../../../reduxVersion/baseComponent";
 
 import Icon from 'react-native-vector-icons/Ionicons';
-import {tabBarIcon} from "../../RouterFactory";
+import {tabBarIcon} from "../../../../core/routerConfig";
 const tabBarWidth = Dimensions.get('window').width * 0.25;
+
+
+
+
+
 export default class HomeScreen extends PureComponent{
-
-  // static navigationOptions = ({navigation})=>
-  //   (
-  //     { tabBarLabel: "首页222",
-  //       tabBarIcon: ({tintColor,focused})=>(
-  //         <View  style={{flex:1,backgroundColor:"orange"}}>
-  //           <Icon name={"ios-home"} size={30} color={tintColor}/>
-  //           <Badge style={{position:"absolute",top:0,right:-10}}>
-  //             <Text style={{fontSize:8,color:"white"}} >111</Text>
-  //           </Badge>
-  //         </View>
-  //       ),
-  //       header:null,
-  //     }
-  //   );
-
   static navigationOptions = ({navigation})=>
     (
       {
@@ -44,7 +33,7 @@ export default class HomeScreen extends PureComponent{
             alignItems:"center", justifyContent:"center"}}>
             <Icon name={"ios-home"} size={30} color={tintColor}/>
             <Badge style={{position:"absolute",top:2,right:tabBarWidth*0.25}}>
-              <Text style={{fontSize:8,color:"white"}} >111</Text>
+              <Text style={{fontSize:8,color:"white"}}>{navigation.state.params.count?navigation.state.params.count:0}</Text>
             </Badge>
           </View>
         ),
@@ -55,12 +44,15 @@ export default class HomeScreen extends PureComponent{
 
 
 
-
-
   constructor(props){
     super(props);
     //const { navigate } = this.props.navigation;
     //this.navigate = navigate;
+
+  }
+
+  componentWillMount(){
+    this.props.navigation.setParams({count:20});
   }
 
   render() {
@@ -73,9 +65,15 @@ export default class HomeScreen extends PureComponent{
           title="Chat with hammer"
         />
         
-        <Button title="登录" onPress={()=>navigate("LoginScreen")} />
-
+        <Button title="登录"   onPress={()=>navigate("LoginScreen")} />
+        <Button title="角标+1" onPress={this.addOne} />
     </View>)
+  }
+
+
+  addOne = ()=>{
+    let count = (this.props.navigation.state.params.count || 0)  + 1;
+    this.props.navigation.setParams({count:count});
   }
 
 }

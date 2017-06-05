@@ -3,7 +3,7 @@
  */
 import React, {PropTypes} from 'react';
 import { KeyboardAwareScrollView } from '../vendor/react-native-keyboard-aware-scroll-view';
-import BaseComponent from '../core/baseComponent';
+import BaseComponent from '../reduxVersion/baseComponent';
 import enhanceProps from '../utils/enhanceProps';
 import {isEqual} from 'lodash';
 

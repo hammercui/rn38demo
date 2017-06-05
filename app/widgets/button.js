@@ -3,7 +3,7 @@
  */
 import React, {PropTypes} from 'react';
 import { TouchableOpacity, ActivityIndicator } from 'react-native';
-import BaseComponent from '../core/baseComponent';
+import BaseComponent from '../reduxVersion/baseComponent';
 import enhanceProps from '../utils/enhanceProps';
 import _ from 'lodash';
 import ReactNativePropRegistry from 'react-native/Libraries/Renderer/src/renderers/native/ReactNativePropRegistry';

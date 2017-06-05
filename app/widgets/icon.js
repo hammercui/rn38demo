@@ -3,7 +3,7 @@
  */
 import React, {PropTypes} from 'react';
 import ReactNative, {Platform} from 'react-native';
-import BaseComponent from '../core/baseComponent';
+import BaseComponent from '../reduxVersion/baseComponent';
 import enhanceProps from '../utils/enhanceProps';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';

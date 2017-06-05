@@ -19,7 +19,7 @@ const TimerMixin = require('react-timer-mixin');
 const SceneComponent = require('./SceneComponent');
 const DefaultTabBar = require('./DefaultTabBar');
 const ScrollableTabBar = require('./ScrollableTabBar');
-import BaseComponent from "../../core/baseComponent";
+import BaseComponent from "../../reduxVersion/baseComponent";
 
 // const   mixins = [TimerMixin, ];
 // const statics =  {

@@ -5,6 +5,6 @@
 
 
 "use stricts";
-import Router from "./router";
+import Router from "../../core/router";
 
 export default Router;
