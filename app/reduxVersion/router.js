@@ -8,12 +8,11 @@ import React,{Component} from "react";
 import {Scene,Router,Modal,Reducer} from "react-native-router-flux";
 import ReactNative,{Alert, BackAndroid} from "react-native";
 
-
-import Home from "./pages/home/index";
-import Fuli from "./pages/fuli/index";
-import Study from "./pages/study/index";
-import UserCenter from "./pages/userCenter/index";
-import TabBarIcon from "./components/tabBarIcon/index";
+import Home from "./home/index";
+import Fuli from "./fuli/index";
+import Study from "./study/index";
+import UserCenter from "./userCenter/index";
+import TabBarIcon from "../components/tabBarIcon/index";
 
 const reducerCreate = params=>{
     const defaultReducer = Reducer(params);

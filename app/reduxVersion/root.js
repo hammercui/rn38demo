@@ -10,7 +10,7 @@ import Router from "./router";
 // import configureStore from "../biz/store/index"
 // const store = configureStore();
 
-import store from "../biz/store/index";
+import store from "../../biz/store/index";
 if (!__DEV__) {
     console.info = () => {};
     console.log = () => {};

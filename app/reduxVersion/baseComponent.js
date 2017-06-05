@@ -2,17 +2,17 @@
  * Created by cly on 17/1/5.
  */
 'use strict';
-import React, {Component} from 'react';
-import { getTheme } from '../theme';
+import React, {Component,PureComponent} from 'react';
+import { getTheme } from './theme/index';
 
-export default class BaseComponent extends Component {
+export default class BaseComponent extends PureComponent {
 
     static contextTypes = {
         theme: React.PropTypes.object
     };
 
     static propTypes = {
-        theme: React.PropTypes.object
+        theme: React.PropTypes.objectBaseComponent
     };
 
     static childContextTypes = {
@@ -31,5 +31,14 @@ export default class BaseComponent extends Component {
         // return this.context.theme ? this.context.theme:getTheme();
         // return getTheme();
     }
+
+
+  static navigationOptions = ({navigation})=>({
+    title: (navigation.state.params && navigation.state.params.title + "345345") || "title"
+    //headerRight:<Button title="Info"  onPress={() => navigation.navigate('Info', { user: 'hammer2' })} />
+  });
+
+
+
 
 }
